@@ -1,0 +1,17 @@
+/* Press Start 2P font-family: 'Righteous', cursive;*/
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+/* Righteus Fonts font-family: 'Righteous', cursive;*/
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+/* Kanit font-family: 'Righteous', cursive;*/
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+/* Variables de entorno */
+:root{
+    --index_title_font: font-family: 'Righteous', cursive;
+    --sub_titles_font: font-family: 'Righteous', cursive;
+    --table_font: font-family: 'Righteous', cursive;
+    --primary_color: #0091FE;
+    --secondary_color: #1B5779;
+    --table_title_color: #C7CFD7;
+    --search_input_color: #0091FE;
+}
