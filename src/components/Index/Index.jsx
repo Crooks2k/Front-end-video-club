@@ -1,14 +1,24 @@
 import React from 'react'
-// import {BiMoviePlay} from "react-icons/bi"
-// import {AiOutlineStar} from "react-icons/ai"
+import {BiMoviePlay} from "react-icons/bi"
+import {AiOutlineStar} from "react-icons/ai"
+import { Link } from 'react-router-dom'
 
 const Index = () => {
   return (
-    <div>
-      <h1>| Video Club Movie Data |</h1>
+    <div className='main_index'>
+      <h1>VIDEO CLUB</h1>
       <div className='Redirection-buttons'>
-        <button></button>
-        <button></button>
+
+        <div className='button-group'>
+          <h4>Movies</h4>
+          <Link to="/Movies"><button><BiMoviePlay/></button></Link>
+        </div>
+        
+        <div className='button-group'>
+          <h4>Rankings</h4>
+          <Link to="/Rankings"><button><AiOutlineStar/></button></Link>
+        </div>
+
       </div>
     </div>
   )

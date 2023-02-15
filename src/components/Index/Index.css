@@ -1,0 +1,79 @@
+.main_index{
+    display: grid;
+    place-content: center;
+    place-items: center;
+    width: 100%;
+    height: 100vh;
+}
+.main_index h1{
+    width: 340px;
+    background-color: var(--secondary_color);
+    text-align: center;
+    padding-top: 1.3rem;
+    padding-bottom: 1.3rem;
+    font-family: var(--index_title_font);
+    border-radius: 20px;
+    color: #FFF;
+}
+.button-group, .Redirection-buttons button{
+    display: grid;
+    place-content: center;
+    place-items: center;
+}
+.Redirection-buttons button{
+    width: 140px;
+    height: 50px;
+    margin-top: 2rem;
+    border: none;
+    border-radius: 20px;
+    color: #FFF;
+    font-size: 30px;
+    background-color: var(--primary_color);
+    animation-name: pulse;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+.button-group{
+    margin-top: 2rem;
+    align-items: center;
+}
+.Redirection-buttons{
+    display: flex;
+    gap: 2rem;
+}
+.button-group h4{
+    font-family: var(--sub_titles_font);
+    font-size: 29px;
+    letter-spacing: 1px;
+}
+@keyframes pulse {
+    0% {
+      transform: scale(1) translateY(-20px);
+      
+    }
+    50% {
+      transform: scale(1.1) translateY(-20px);
+    }
+    100% {
+      transform: scale(1) translateY(-20px);
+    }
+  }
+
+  /* Responsive */
+
+@media (min-width: 768px) {
+    .main_index h1{
+        width: 400px;
+    }
+}
+@media (min-width: 992px) {
+    .main_index h1{
+        width: 440px;
+    }
+    .Redirection-buttons{
+        display: flex;
+        gap: 4rem;
+    }
+} 
+@media (min-width: 1200px) {} 
+@media (min-width: 1440px) {} 
