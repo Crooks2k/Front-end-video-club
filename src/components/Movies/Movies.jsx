@@ -6,8 +6,6 @@ import MovieList from './MovieList';
 
 const Movies = ({movieData}) => {
 
-  console.log(movieData)
-
   return (
     <>
     <Menu/>
