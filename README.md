@@ -6,7 +6,7 @@
  
 Sitio Web en el que se podra encontrar información acerca peliculas y rating , en donde se podra crear, editar, listar y eliminar peliculas y Rating, asi mismo permite realizar busquedas por titulo de pelicula  .() 
 
-###Contenido📋 
+### Contenido📋 
 * Installación
 * Diseño
 * Tecnologias Aplicadas
