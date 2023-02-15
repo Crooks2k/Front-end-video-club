@@ -1,7 +1,12 @@
-# Frontend Video Club
-Sitio Web en el que se podra encontrar información acerca peliculas y rating , en donde se podra crear, editar, listar y eliminar peliculas y Rating, asi mismo permite realizar busquedas por titulo de pelicula  .()
+# FRONTED 
+## VIDEOCLUB
+ 
+ 
+## START 🚀 
+ 
+Sitio Web en el que se podra encontrar información acerca peliculas y rating , en donde se podra crear, editar, listar y eliminar peliculas y Rating, asi mismo permite realizar busquedas por titulo de pelicula  .() 
 
-# Contenido
+# ##Contenido📋 
 * Installación
 * Diseño
 * Tecnologias Aplicadas
@@ -9,17 +14,15 @@ Sitio Web en el que se podra encontrar información acerca peliculas y rating , 
 * Variables Globales
 * Fuentes
 
-
-# Instalación
+ 
+### Installation 🔧 
 1. $ git clone ... //Clonar el repositorio
 2. $ cd Prtafolio   // ir a la carpeta
 3. $ npm install       // instalar el paquete npm
-4. $ npm run dev // ejecutar el proyecto localmente
-
-# Diseño
+4. $ npm run dev // ejecutar el proyecto localmente 
 
 
-# Tecnologias Aplicadas
+# Tecnologias Aplicadas 📦
 
 * Boostrap
 * React
@@ -27,9 +30,8 @@ Sitio Web en el que se podra encontrar información acerca peliculas y rating , 
 * React rooter dom
 * React icons
 * Vite
-
-# Funcionalidades
-
+## Funcionalidades 📦 
+ 
 1. Consumir ApiRest
 2. Crear reguistro de peliculas
 3. Listar Peliculas
@@ -42,7 +44,8 @@ Sitio Web en el que se podra encontrar información acerca peliculas y rating , 
 10. Eliminar rating
 11. Busqueda de rating
 
-# Variables Globales
+ 
+## Variables Globales 🛠 
 
 CSS
 En las diferentes hojas de estilos cuentan con las siguientes varibales:
@@ -54,7 +57,7 @@ En las diferentes hojas de estilos cuentan con las siguientes varibales:
 *    --secondary_color: #1B5779;
 *    --table_title_color: #C7CFD7;
 *    --search_input_color: #0091FE;
-
+ 
 # Fuentes
 
 se usaron 3 tipos de letras las cuales se manejaron desde google fonts y luego dentro de una variable global
@@ -64,3 +67,19 @@ se usaron 3 tipos de letras las cuales se manejaron desde google fonts y luego d
 * Kanit font-family: 'Kanit', sans-serif
 
 
+## Autores ✒️ 
+* Daniel Veloza - Scrum Master Fronted - [Croosk2k](https://github.com/Crooks2k)
+* Ruth Lozano- Product Owner  Backend - [ruthyi](https://github.com/ruthyi)
+*  Valentina Godoy - Team memberBackend - [Valentina9911](https://github.com/Valentina9911)
+ 
+ 
+ 
+## License 📄 
+Read our license 
+ 
+- MIT LICENSE 
+ 
+ 
+ 
+--- 
+⌨️ con ❤️
