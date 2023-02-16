@@ -1,8 +1,10 @@
 import React from 'react'
 import {AiOutlineEdit} from "react-icons/ai"
 import {AiOutlineDelete} from "react-icons/ai"
+import EditModal from './EditModal'
+import { useState } from 'react'
 
-const MovieList = ({item}) => {
+const MovieList = ({item, position, removeFile, setMovieData}) => {
 
      // function to delete and alert
   const handleDelete = () => {
@@ -18,15 +20,22 @@ const MovieList = ({item}) => {
         swal("Los datos se han eliminado exitosamente", {
           icon: "success",
         });
+        removeFile()
       } else {
         swal("Cancelaste la eliminación");
       }
     });
   }
 
+  //Edit Modal
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
         <tr>
-          <th className='table-header-indicator'>1</th>
+          <th className='table-header-indicator'>{position}</th>
           <th>{item.title}</th>
           <th>{item.year}</th>
           <th>{item.time}</th>
@@ -45,7 +54,7 @@ const MovieList = ({item}) => {
                 item.actor.map(act => {
                     return(
                         <div key={act._id}>
-                          <span>{act.name} </span> <span>{act.lastname}</span>, <span>{act.gender}</span>
+                          <span>{act.name} </span> <span>{act.lastname}</span>
                         </div>
                     )
                 })
@@ -64,8 +73,9 @@ const MovieList = ({item}) => {
           </th>
           <th>
             <div className='table-tools'>
-              <AiOutlineEdit id="edit"/>
-              <AiOutlineDelete id="clear" onClick={handleDelete}/>
+              <AiOutlineEdit id="edit" onClick={handleShow}/>
+              <EditModal show={show} handleClose={handleClose} handleShow={handleShow} item={item} setMovieData={setMovieData}/>
+              <AiOutlineDelete id="clear" onClick={() => handleDelete(item._id)}/>
             </div>
           </th>
         </tr>

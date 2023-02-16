@@ -29,7 +29,7 @@ function App() {
     <>
     <Routes>
       <Route path="/" element={<Index/>}/>
-      <Route path="/Movies" element={<Movies movieData={movieData}/>}/>
+      <Route path="/Movies" element={<Movies movieData={movieData} setMovieData={setMovieData}/>}/>
       <Route path="/Rankings" element={<Rankings/>}/>
     </Routes>
     </>

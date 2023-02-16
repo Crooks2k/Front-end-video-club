@@ -102,8 +102,25 @@
     }
 } 
 @media (min-width: 1200px) {
-
+    .Movie_Data-movies h3{
+        background-color: var(--secondary_color);
+    }
 } 
 @media (min-width: 1440px) {
 
 } 
+
+/* Form edit inputs */
+#Dates_inputs{
+    display: flex;
+    gap: 1rem;
+}
+.Dates{
+    width: 30%!important;
+}
+#genres_dropdown{
+    background-color: #FFF;
+    border: 1px solid rgba(175, 175, 175, 0.507);
+    color: #000;
+    margin-top: 0.3rem;
+}

@@ -4,7 +4,35 @@ import Table from 'react-bootstrap/Table';
 import {AiOutlineSearch} from "react-icons/ai"
 import MovieList from './MovieList';
 
-const Movies = ({movieData}) => {
+const Movies = ({movieData, setMovieData}) => {
+
+  const removeTodo = (id) => {
+    console.log(id)
+    let salida={"id": id }
+    const body = JSON.stringify(salida);
+
+    const requestInit = {
+      method: 'DELETE',
+      headers: {'Content-Type': 'application/json'},
+      body: body
+    };
+    
+    const fetchData = async () => {
+      const response = await fetch(
+        "https://backendvideoclub.onrender.com/App/removeMovies",
+        requestInit //send headers, methods and req body
+      );
+      const data = await response.json(); //Convierte la respuesta en un archivo json
+      
+      // console.log(data[0]._id);
+    }
+    fetchData()
+    setMovieData((oldlist) =>
+      oldlist.filter((deleteReq) => {
+        return deleteReq._id !== id;
+      })
+    );
+  };
 
   return (
     <>
@@ -20,7 +48,7 @@ const Movies = ({movieData}) => {
 
         <div className='info'>
           <div className='Movie_Data-movies'>
-            <h3>Movies: </h3>
+            <h3>Movies: {movieData.length}</h3>
           </div>
         </div>
     </div>
@@ -36,16 +64,17 @@ const Movies = ({movieData}) => {
           <th>Date</th>
           <th>Country</th>
           <th>Genres</th>
-          <th>Actor / Genre</th>
+          <th>Actor</th>
           <th>Director</th>
           <th className='tools'>Tools</th>
         </tr>
       </thead>
       <tbody>
+        
         {
-          movieData.map(item =>{
+          movieData.map((item, index) =>{
             return(
-              <MovieList item={item} key={item._id}/>
+              <MovieList item={item} key={item._id} position={index+1} setMovieData={setMovieData} removeFile={() => removeTodo(item._id)} /> //removeFile send a function reference and item._id actual to use removeFile() to delete.
             )
           })
         }
