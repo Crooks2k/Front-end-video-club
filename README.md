@@ -71,7 +71,10 @@ se usaron 3 tipos de letras las cuales se manejaron desde google fonts y luego d
 * Daniel Veloza - Scrum Master Fronted - [Croosk2k](https://github.com/Crooks2k)
 * Ruth Lozano- Product Owner  Backend - [ruthyi](https://github.com/ruthyi)
 *  Valentina Godoy - Team memberBackend - [Valentina9911](https://github.com/Valentina9911)
- 
+
+
+### Diseño ✨
+![image](https://user-images.githubusercontent.com/97590572/219683232-3717cc5f-c73a-4217-b1c1-fb50a6a6c2e5.png)
  
  
 ### License 📄 
