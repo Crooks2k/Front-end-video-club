@@ -10,6 +10,8 @@ import {AiOutlineStar} from "react-icons/ai"
 
 const Movies = ({movieData, setMovieData, editTable, AddData}) => {
 
+  const [MovieDataSearchTemp, setMovieDataSearchTemp] = useState(movieData);
+
   const removeTodo = (id) => {
     console.log(id)
     let salida={"id": id }
@@ -82,6 +84,23 @@ const Movies = ({movieData, setMovieData, editTable, AddData}) => {
     });
   }
 
+  //OnSearch
+  const [search, setSearch] = useState("");
+  const onSearch = (e) =>{
+    setSearch(e.target.value)
+    handleSearch()
+    console.log(search)
+  }
+  const handleSearch = async() =>{
+        if(search == ""){
+          setMovieData(MovieDataSearchTemp)
+        }else{
+          const movieData = await fetch (`https://backendvideoclub.onrender.com/App/movContenga/${search}`) //en prueba
+          const response = await movieData.json()
+          setMovieData(response)
+        }
+  }
+
   //Add Modal
   const [show, setShow] = useState(false);
 
@@ -93,7 +112,7 @@ const Movies = ({movieData, setMovieData, editTable, AddData}) => {
     <Menu/>
     <div id="Menu_Main">
         <div className='Nav'>
-          <span><AiOutlineSearch/></span><input type={'search'} placeholder="Search Movies..."></input>
+          <span><AiOutlineSearch/></span><input type={'search'} placeholder="Search Movies..." onChange={onSearch}></input>
           <div className='info'> 
             <h4 id="Movie_Data">Movie Data</h4>
             <button onClick={handleShow}>Crear registro</button>
