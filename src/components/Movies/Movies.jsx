@@ -3,8 +3,12 @@ import Menu from '../Global-components/Menu';
 import Table from 'react-bootstrap/Table';
 import {AiOutlineSearch} from "react-icons/ai"
 import MovieList from './MovieList';
+import AddModal from './AddModal';
+import { useState } from 'react';
+import swal from 'sweetalert';
+import {AiOutlineStar} from "react-icons/ai"
 
-const Movies = ({movieData, setMovieData}) => {
+const Movies = ({movieData, setMovieData, editTable, AddData}) => {
 
   const removeTodo = (id) => {
     console.log(id)
@@ -32,17 +36,68 @@ const Movies = ({movieData, setMovieData}) => {
         return deleteReq._id !== id;
       })
     );
+
   };
 
+  const modalTest = () =>{
+    swal({
+      text: "You can try to search a movie here :3",
+      content: "input",
+      button: {
+        text: "Search!",
+        closeModal: false,
+      },
+    })
+    .then(name => {
+      if (!name) throw null;
+     
+      return fetch(`https://itunes.apple.com/search?term=${name}&entity=movie`);
+    })
+    .then(results => {
+      return results.json();
+    })
+    .then(json => {
+      const movie = json.results[0];
+     
+      if (!movie) {
+        return swal("No movie was found!");
+      }
+     
+      const name = movie.trackName;
+      const imageURL = movie.artworkUrl100;
+     
+      swal({
+        title: "Top result:",
+        text: name,
+        icon: imageURL,
+      });
+    })
+    .catch(err => {
+      if (err) {
+        swal("Oh noes!", "The AJAX request failed!", "error");
+      } else {
+        swal.stopLoading();
+        swal.close();
+      }
+    });
+  }
+
+  //Add Modal
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   return (
     <>
+    <AddModal show={show} handleClose={handleClose} handleShow={handleShow} AddData={AddData}/>
     <Menu/>
     <div id="Menu_Main">
         <div className='Nav'>
           <span><AiOutlineSearch/></span><input type={'search'} placeholder="Search Movies..."></input>
           <div className='info'> 
             <h4 id="Movie_Data">Movie Data</h4>
-            <button>Crear registro</button>
+            <button onClick={handleShow}>Crear registro</button>
+            <button onClick={modalTest}><AiOutlineStar/></button>
           </div>
         </div>
 
@@ -74,7 +129,7 @@ const Movies = ({movieData, setMovieData}) => {
         {
           movieData.map((item, index) =>{
             return(
-              <MovieList item={item} key={item._id} position={index+1} setMovieData={setMovieData} removeFile={() => removeTodo(item._id)} /> //removeFile send a function reference and item._id actual to use removeFile() to delete.
+              <MovieList item={item} key={item._id} position={index+1} setMovieData={setMovieData} editTable={editTable} removeFile={() => removeTodo(item._id)} /> //removeFile send a function reference and item._id actual to use removeFile() to delete.
             )
           })
         }

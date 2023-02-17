@@ -3,8 +3,9 @@ import {AiOutlineEdit} from "react-icons/ai"
 import {AiOutlineDelete} from "react-icons/ai"
 import EditModal from './EditModal'
 import { useState } from 'react'
+import swal from 'sweetalert'
 
-const MovieList = ({item, position, removeFile, setMovieData}) => {
+const MovieList = ({item, position, removeFile, setMovieData, editTable}) => {
 
      // function to delete and alert
   const handleDelete = () => {
@@ -42,7 +43,7 @@ const MovieList = ({item, position, removeFile, setMovieData}) => {
           <th>{item.language}</th>
           <th>{item.date}</th>
           <th>{item.country}</th>
-          <th> |
+          <th> 
             {item.genres.map(genre =>{
             return(
                 <span key={genre._id}> {genre.kind} |</span>
@@ -74,7 +75,7 @@ const MovieList = ({item, position, removeFile, setMovieData}) => {
           <th>
             <div className='table-tools'>
               <AiOutlineEdit id="edit" onClick={handleShow}/>
-              <EditModal show={show} handleClose={handleClose} handleShow={handleShow} item={item} setMovieData={setMovieData}/>
+              <EditModal show={show} handleClose={handleClose} handleShow={handleShow} item={item} setMovieData={setMovieData} editTable={editTable}/>
               <AiOutlineDelete id="clear" onClick={() => handleDelete(item._id)}/>
             </div>
           </th>
