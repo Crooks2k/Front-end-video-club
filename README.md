@@ -69,7 +69,7 @@ se usaron 3 tipos de letras las cuales se manejaron desde google fonts y luego d
 
 ### Autores ✒️ 
 * Daniel Veloza - Scrum Master Fronted - [Croosk2k](https://github.com/Crooks2k)
-* Ruth Lozano- Product Owner  Backend - [ruthyi](https://github.com/ruthyi)
+* Ruth Lizcano- Product Owner  Backend - [ruthyi](https://github.com/ruthyi)
 *  Valentina Godoy - Team memberBackend - [Valentina9911](https://github.com/Valentina9911)
 
 
